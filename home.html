@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IBox Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/customer.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 width100">
+            <form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+                <span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-lock"></i>
+					</span>
+
+
+                <div class="container-fluid py-1">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" id="logoutBtn">Logout</a>
+                                </li>
+                            </ul>
+
+                            <div class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                       aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+
+                <div class="container-fluid">
+                    <div class="row py-2">
+                        <div class="col-md">
+                            <div class="alert alert-info" role="alert">
+                                <h4>Your Boxes Here</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid hide" id="homeInfo">
+                    <div class="row py-2">
+                        <div class="col-md">
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Hi there!</strong> Your operation is done, once the transaction is confirmed & feel free to load latest boxes.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid hide" id="homeDanger">
+                    <div class="row py-2">
+                        <div class="col-md">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Hi there!</strong> Some issues happened, please wait ang try again.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-md">
+                            <button type="button"
+                                    class="btn btn-outline-success border border-info btn-lg btn-block"
+                                    data-toggle="modal" data-target="#boxModal"
+                                    data-operation="new"
+                            >New Box</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-md">
+                            <button type="button"
+                                    class="btn btn-outline-success border border-info btn-lg btn-block"
+                                    id="loadBoxesBtn"
+                            >Load Latest Boxes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="boxList">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hi</h5>
+                                        <p class="card-text">You have no box now. Please wait for loading or add a new box now!</p>
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target=""
+                                           data-whatever="@mdo">Open</a>
+                                        <a href="#" class="btn btn-secondary" data-toggle="modal" data-target=""
+                                           data-whatever="@mdo">Edit</a>
+                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target=""
+                                           data-whatever="@mdo">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="boxModal" tabindex="-1" role="dialog" aria-labelledby="boxModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="boxModalLabel">View</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <!--<div class="form-group">-->
+                        <!--<label for="key" class="col-form-label">Key:</label>-->
+                        <!--<input type="text" class="form-control" id="key" readonly>-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="value" class="col-form-label">Value:</label>-->
+                        <!--<textarea class="form-control" id="value"></textarea>-->
+                    <!--</div>-->
+                    <div class="wrap-input100 validate-input" data-validate = "Key required">
+                        <input class="input100" type="text" name="key" id="key">
+                        <span class="focus-input100" data-placeholder="Key"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Value required">
+                        <textarea class="input100 textareaHeight" name="value" id="value" rows="10">
+                        </textarea>
+                        <span class="focus-input100" data-placeholder="Value"></span>
+                    </div>
+                    <div class="alert alert-info hide" role="alert" id="boxModalInfo">
+                        Your operation is ongoing, please ensure your transaction is completely done.
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="operationBtn" style="display: none">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-2" role="dialog" id="deleteModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure to delete it? Once you did it, the box can not go back!!!</p>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="deleteBtn">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="deleteKey">
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+
+<script src="vendor/nebulas/nebPay.js"></script>
+<script src="vendor/nebulas/nebulas.js"></script>
+
+<script src="js/config.js"></script>
+<script src="js/crypto.js"></script>
+<script src="js/common.js"></script>
+<script src="js/iBoxModule.js"></script>
+</body>
+</html>

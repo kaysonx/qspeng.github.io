@@ -1,0 +1,19 @@
+.width100 {
+    width: 100% !important;
+}
+
+.keyColor {
+    color: black;
+}
+
+.textareaHeight {
+    height: 100px;
+}
+
+.hide {
+    display: none;
+}
+
+.error {
+    color: #e83e8c !important;
+}
