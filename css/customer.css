@@ -17,3 +17,7 @@
 .error {
     color: #e83e8c !important;
 }
+
+.line {
+    text-decoration:underline;
+}

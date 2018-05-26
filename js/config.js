@@ -1,4 +1,4 @@
-const dappAddress = "n1JDBqzz9TTPyX37KneqhwqD3yyqbwiHbJ7";
+const dappAddress = "n1ya2ooniaErDh3pNTTpWUsKpyJWzy36VEr";
 const nebulasNetAddress = "https://testnet.nebulas.io";
 
 

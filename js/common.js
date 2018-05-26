@@ -1,4 +1,9 @@
 const errorHandler = (err) => {
+    if(err.message.includes("Invalid operation")) {
+        sessionStorage.clear();
+        window.location.href = "index.html";
+    }
+
     if ($('#homeDanger').length > 0) {
         $('#homeDanger').show();
     }
@@ -21,6 +26,10 @@ const queryTxStatus = (successHandler) => {
         })
         .catch(function (err) {
             console.log(err);
+            if(err.message.includes("Invalid operation")) {
+                sessionStorage.clear();
+                window.location.href = "index.html";
+            }
             errorHandler('Ooops, some error occurred. Please try again.');
         });
 };
