@@ -153,6 +153,7 @@ const bindEventForBox = () => {
     $('#deleteBtn').click(deleteBox);
     $('#loadBoxesBtn').click(loadLatestData);
     $('#logoutBtn').click(logout);
+    $('#searchBtn').click(search);
 };
 
 const addOrUpdateBox = () => {
@@ -244,4 +245,26 @@ const loadLatestData = () => {
 const logout = () => {
     sessionStorage.removeItem('payload');
     window.location.href = 'index.html';
+};
+
+const search = () => {
+    sessionStorage.getItem('payload');
+    const payload = sessionStorage.getItem('payload');
+    if (!payload) {
+        window.location.href = 'index.html';
+    }
+    const {boxes} = JSON.parse(payload);
+    let key = $('#searchKey').val() ? $('#searchKey').val() : '';
+    key = key.trim();
+    if(!!key) {
+        const filteredBoxes = boxes.filter(box => box.key.includes(key));
+        if(filteredBoxes.length > 0) {
+            constructBoxListHtml(filteredBoxes)
+        } else {
+            $('#homeTip').show();
+        }
+    } else {
+        constructBoxListHtml(boxes);
+    }
+    return false;
 };
