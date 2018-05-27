@@ -65,7 +65,9 @@
                             <div class="form-inline my-2 my-lg-0">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Search"
                                        aria-label="Search" id="searchKey">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchBtn">Search</button>
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchBtn">
+                                    Search
+                                </button>
                             </div>
                         </div>
                     </nav>
@@ -76,7 +78,7 @@
                     <div class="row py-2">
                         <div class="col-md">
                             <div class="alert alert-info" role="alert">
-                                <h4>Your Boxes Here</h4>
+                                <h4><span id="showUser"></span>Your Boxes Here</h4>
                             </div>
                         </div>
                     </div>
@@ -98,7 +100,7 @@
                     </div>
                 </div>
 
-                <div class="container-fluid" >
+                <div class="container-fluid">
                     <div class="row py-2">
                         <div class="col-md" id="homeDanger">
                         </div>
@@ -112,7 +114,8 @@
                                     class="btn btn-outline-success border border-info btn-lg btn-block"
                                     data-toggle="modal" data-target="#boxModal"
                                     data-operation="new"
-                            >New Box</button>
+                            >New Box
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -123,7 +126,8 @@
                             <button type="button"
                                     class="btn btn-outline-success border border-info btn-lg btn-block"
                                     id="loadBoxesBtn"
-                            >Load Latest Boxes</button>
+                            >Load Latest Boxes
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -135,7 +139,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">Hi</h5>
-                                        <p class="card-text">You have no box now. Please wait for loading or add a new box now!</p>
+                                        <p class="card-text">You have no box now. Please wait for loading or add a new
+                                            box now!</p>
                                         <a href="#" class="btn btn-primary" data-toggle="modal" data-target=""
                                            data-whatever="@mdo">Open</a>
                                         <a href="#" class="btn btn-secondary" data-toggle="modal" data-target=""
@@ -149,6 +154,12 @@
                     </div>
                 </div>
             </form>
+            <footer class="mt-5 mb-2">
+                <p class="text-center error"> <span>IBox Copyright © 2018</span>
+                    <a href="https://github.com/qspeng/nasIBoxClient" class="blueWith line" target="_blank">Use IBox Offline</a><br>
+                    Powered by <a href="https://github.com/qspeng" class="blueWith line" target="_blank">qspeng</a>
+                </p>
+            </footer>
         </div>
     </div>
 </div>
@@ -167,14 +178,14 @@
             <div class="modal-body">
                 <form>
                     <!--<div class="form-group">-->
-                        <!--<label for="key" class="col-form-label">Key:</label>-->
-                        <!--<input type="text" class="form-control" id="key" readonly>-->
+                    <!--<label for="key" class="col-form-label">Key:</label>-->
+                    <!--<input type="text" class="form-control" id="key" readonly>-->
                     <!--</div>-->
                     <!--<div class="form-group">-->
-                        <!--<label for="value" class="col-form-label">Value:</label>-->
-                        <!--<textarea class="form-control" id="value"></textarea>-->
+                    <!--<label for="value" class="col-form-label">Value:</label>-->
+                    <!--<textarea class="form-control" id="value"></textarea>-->
                     <!--</div>-->
-                    <div class="wrap-input100 validate-input" data-validate = "Key required">
+                    <div class="wrap-input100 validate-input" data-validate="Key required">
                         <input class="input100" type="text" name="key" id="key">
                         <span class="focus-input100" data-placeholder="Key"></span>
                     </div>

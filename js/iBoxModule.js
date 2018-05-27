@@ -154,6 +154,7 @@ const bindEventForBox = () => {
     $('#loadBoxesBtn').click(loadLatestData);
     $('#logoutBtn').click(logout);
     $('#searchBtn').click(search);
+    showUser();
 };
 
 const addOrUpdateBox = () => {
@@ -283,4 +284,14 @@ const search = () => {
         constructBoxListHtml(boxes);
     }
     return false;
+};
+
+const showUser = () => {
+    sessionStorage.getItem('payload');
+    const payload = sessionStorage.getItem('payload');
+    if (!payload) {
+        window.location.href = 'index.html';
+    }
+    const {user} = JSON.parse(payload);
+    $('#showUser').text('Hi ' + user + ', ');
 };
