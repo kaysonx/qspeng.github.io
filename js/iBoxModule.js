@@ -24,7 +24,7 @@ const queryBoxes = (user) => {
             if (result && result.isSuccess) {
                 if (!!result.payload) {
                     sessionStorage.setItem("payload", JSON.stringify(result.payload));
-                    if(result.payload.secret) {
+                    if (result.payload.secret) {
                         sessionStorage.setItem("secret", result.payload.secret);
                     }
                     constructBoxListHtml(result.payload.boxes);
@@ -228,7 +228,15 @@ const boxOperationSuccessHandler = () => {
     loadLatestData();
     $('#boxModal').modal('hide');
     $('#deleteModal').modal('hide');
-    $('#homeInfo').show();
+    const tip = `
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Hi there!</strong> Your operation is done, once the transaction is confirmed & feel free to load latest boxes.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>`;
+    $('#homeInfo').html(tip);
+    $('#homeInfo').closest('.container-fluid').show();
 };
 
 const loadLatestData = () => {
@@ -256,12 +264,20 @@ const search = () => {
     const {boxes} = JSON.parse(payload);
     let key = $('#searchKey').val() ? $('#searchKey').val() : '';
     key = key.trim();
-    if(!!key) {
+    if (!!key) {
         const filteredBoxes = boxes.filter(box => box.key.includes(key));
-        if(filteredBoxes.length > 0) {
+        if (filteredBoxes.length > 0) {
             constructBoxListHtml(filteredBoxes)
         } else {
-            $('#homeTip').show();
+            const tip = `
+                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Hi there!</strong> No result for your search, please use another key.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                         </div>`;
+            $('#homeTip').html(tip);
+            $('#homeTip').closest('.container-fluid').show();
         }
     } else {
         constructBoxListHtml(boxes);

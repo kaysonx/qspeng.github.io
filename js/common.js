@@ -1,11 +1,19 @@
 const errorHandler = (err) => {
-    if(err.message.includes("Invalid operation")) {
+    if(err.includes("Invalid operation")) {
         sessionStorage.clear();
         window.location.href = "index.html";
     }
 
     if ($('#homeDanger').length > 0) {
-        $('#homeDanger').show();
+        const tip = `
+                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Hi there!</strong> Some issues happened, please wait ang try again.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                     </div>`;
+        $('#homeDanger').html(tip);
+        $('#homeDanger').closest('.container-fluid').show();
     }
     if ($('#errorInfo').length > 0) {
         $('#errorInfo').text(err);
