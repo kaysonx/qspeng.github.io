@@ -1,5 +1,10 @@
-const dappAddress = "n1xYTjdYXZHGhxSsejdZT9HDMV2d4FmEs2q";
-const nebulasNetAddress = "https://testnet.nebulas.io";
+//Testnet Address
+// const dappAddress = "n1xYTjdYXZHGhxSsejdZT9HDMV2d4FmEs2q";
+// const nebulasNetAddress = "https://testnet.nebulas.io";
+
+//Mainnet Address
+const dappAddress = "n1kj3hUaLCmrnquaztNLrUmPwhR6MgnPsNz";
+const nebulasNetAddress = "https://mainnet.nebulas.io";
 
 
 const nebulas = require("nebulas"),

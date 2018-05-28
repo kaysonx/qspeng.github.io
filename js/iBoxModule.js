@@ -210,7 +210,7 @@ const addOrUpdateBox = () => {
     serialNumber = nebPay.call(dappAddress, value, callFunction, encodeCallArgs, {
         listener: () => {
         },
-        callback: NebPay.config.testnetUrl
+        callback: NebPay.config.mainnetUrl
     });
 
     $('#boxModalInfo').show();
@@ -240,7 +240,7 @@ const deleteBox = () => {
     serialNumber = nebPay.call(dappAddress, value, callFunction, encodeCallArgs, {
         listener: () => {
         },
-        callback: NebPay.config.testnetUrl
+        callback: NebPay.config.mainnetUrl
     });
     intervalQuery = setInterval(function () {
         queryTxStatus(boxOperationSuccessHandler);

@@ -22,7 +22,7 @@ const errorHandler = (err) => {
 };
 
 const queryTxStatus = (successHandler, hardCodeMsg = 'Please ensure your data is valid.') => {
-    nebPay.queryPayInfo(serialNumber, {callback: NebPay.config.testnetUrl})   //search transaction result from server (result upload to server by app)
+    nebPay.queryPayInfo(serialNumber, {callback: NebPay.config.mainnetUrl})   //search transaction result from server (result upload to server by app)
         .then(function (resp) {
             console.log("tx result: " + resp);   //resp is a JSON string
             let respObject = JSON.parse(resp);

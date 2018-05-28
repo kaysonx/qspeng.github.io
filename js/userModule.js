@@ -92,7 +92,7 @@ const registerHandler = () => {
     serialNumber = nebPay.call(dappAddress, value, callFunction, encodeCallArgs, {
         listener: () => {
         },
-        callback: NebPay.config.testnetUrl
+        callback: NebPay.config.mainnetUrl
     });
 
     intervalQuery = setInterval(function () {
@@ -127,7 +127,7 @@ const retrieveHandler = () => {
     serialNumber = nebPay.call(dappAddress, value, callFunction, encodeCallArgs, {
         listener: () => {
         },
-        callback: NebPay.config.testnetUrl
+        callback: NebPay.config.mainnetUrl
     });
 
     intervalQuery = setInterval(function () {
