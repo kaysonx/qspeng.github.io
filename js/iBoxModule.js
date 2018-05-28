@@ -216,7 +216,7 @@ const addOrUpdateBox = () => {
     $('#boxModalInfo').show();
 
     intervalQuery = setInterval(function () {
-        queryTxStatus(boxOperationSuccessHandler);
+        queryTxStatus(boxOperationSuccessHandler, true);
     }, 10000);
 };
 
@@ -243,7 +243,7 @@ const deleteBox = () => {
         callback: NebPay.config.mainnetUrl
     });
     intervalQuery = setInterval(function () {
-        queryTxStatus(boxOperationSuccessHandler);
+        queryTxStatus(boxOperationSuccessHandler, true);
     }, 10000);
 };
 

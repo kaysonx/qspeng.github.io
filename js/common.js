@@ -1,10 +1,10 @@
-const errorHandler = (err) => {
+const errorHandler = (err, fromHome = false) => {
     if(err.includes("Invalid operation")) {
         sessionStorage.clear();
         window.location.href = "index.html";
     }
 
-    if ($('#homeDanger').length > 0) {
+    if (!fromHome && $('#homeDanger').length > 0) {
         const tip = `
                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <strong>Hi there!</strong> Some issues happened, please wait ang try again.
@@ -21,7 +21,7 @@ const errorHandler = (err) => {
 
 };
 
-const queryTxStatus = (successHandler, hardCodeMsg = 'Please ensure your data is valid.') => {
+const queryTxStatus = (successHandler, fromHome = false, hardCodeMsg = 'Please ensure your data is valid.') => {
     nebPay.queryPayInfo(serialNumber, {callback: NebPay.config.mainnetUrl})   //search transaction result from server (result upload to server by app)
         .then(function (resp) {
             console.log("tx result: " + resp);   //resp is a JSON string
@@ -32,9 +32,9 @@ const queryTxStatus = (successHandler, hardCodeMsg = 'Please ensure your data is
                 successHandler();
             } else if(respObject.code === 0 && respObject.data.status == 0){
                 clearInterval(intervalQuery);
-                errorHandler(hardCodeMsg);
+                errorHandler(hardCodeMsg, fromHome);
             } else {
-                errorHandler('Please wait for the transition result.');
+                errorHandler('Please wait for the transition result.', fromHome);
             }
         })
         .catch(function (err) {
