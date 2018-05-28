@@ -100,6 +100,28 @@ const constructBoxListHtml = (list) => {
     }
     if (finalHtml) {
         $('#boxList').html('').html(finalHtml);
+    } else {
+        const defaultBox = `
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Hi</h5>
+                                                <p class="card-text">You have no box now. Please wait for loading or add a new
+                                                    box now!</p>
+                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target=""
+                                                   data-whatever="@mdo">Open</a>
+                                                <a href="#" class="btn btn-secondary" data-toggle="modal" data-target=""
+                                                   data-whatever="@mdo">Edit</a>
+                                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target=""
+                                                   data-whatever="@mdo">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+        $('#boxList').html('').html(defaultBox);
     }
 };
 
@@ -226,7 +248,6 @@ const deleteBox = () => {
 };
 
 const boxOperationSuccessHandler = () => {
-    loadLatestData();
     $('#boxModal').modal('hide');
     $('#deleteModal').modal('hide');
     const tip = `
@@ -238,6 +259,7 @@ const boxOperationSuccessHandler = () => {
                 </div>`;
     $('#homeInfo').html(tip);
     $('#homeInfo').closest('.container-fluid').show();
+    setTimeout(() => loadLatestData(), 3500);
 };
 
 const loadLatestData = () => {

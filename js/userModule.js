@@ -96,8 +96,8 @@ const registerHandler = () => {
     });
 
     intervalQuery = setInterval(function () {
-        queryTxStatus(registerSuccessHandler);
-    }, 10000);
+        queryTxStatus(registerSuccessHandler, "Account exists.");
+    }, 6000);
 };
 
 const retrieveHandler = () => {
@@ -131,7 +131,7 @@ const retrieveHandler = () => {
     });
 
     intervalQuery = setInterval(function () {
-        queryTxStatus(registerSuccessHandler);
-    }, 10000);
+        queryTxStatus(registerSuccessHandler, "Please ensure your user account & retrieveKey is matched.");
+    }, 6000);
 };
 
