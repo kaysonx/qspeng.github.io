@@ -9,8 +9,11 @@
 7. 页面采用 `Material UI`, 简洁大方
 
 ---
+>区块链浏览器上的交易详情
 ![区块链浏览器上的交易详情](readme/explore.png)
 ---
+>登录页面
 ![登录页面](readme/index.png)
 ---
+>主页面
 ![主页面](readme/home.png)
